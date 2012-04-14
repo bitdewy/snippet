@@ -1,5 +1,5 @@
 // Pimpl (pointer to implementation) idioms is mentioned in
-// <Effective C++ 3rd edition> item 25 & item 31.
+// <Effective C++ (3rd edition)> item 25 & item 31.
 
 // handle.h
 class Handle {

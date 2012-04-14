@@ -1,14 +1,15 @@
-//Guideline #1: Prefer to make interfaces nonvirtual, using Template Method
-//design pattern.
-//Guideline #2: Prefer to make virtual functions private.
-//Guideline #3: Only if derived classes need to invoke the base
-//implementation of a virtual function, make the virtual function protected.
-//Guideline #4: A base class destructor should be either public and virtual,
-//or protected and nonvirtual.
+// Guideline #1: Prefer to make interfaces nonvirtual, using Template Method
+// design pattern.
+// Guideline #2: Prefer to make virtual functions private.
+// Guideline #3: Only if derived classes need to invoke the base
+// implementation of a virtual function, make the virtual function protected.
+// Guideline #4: A base class destructor should be either public and virtual,
+// or protected and nonvirtual.
 
-//NOTICE Fragile Base Class (FBC) interface problem
+// NOTICE Fragile Base Class (FBC) interface problem
 
-//NVI (Non-Virtual Interface) idioms is mentioned in <Effective C++> item 35.
+// NVI (Non-Virtual Interface) idioms is mentioned in
+// <Effective C++ (3rd edition)> item 35.
 
 #include <set>
 
