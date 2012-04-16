@@ -11,6 +11,7 @@ public:
   virtual Employee* create() const = 0; // Virtual constructor (creation)
   virtual Employee* clone() const = 0;  // Virtual constructor (copying)
 };
+
 class Manager : public Employee     // "is-a" relationship
 {
 public:
