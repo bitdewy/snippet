@@ -6,7 +6,7 @@ private:
   useless_type operator&() const;
 };
 
-// similar in boost
+// implement in boost
 // http://svn.boost.org/svn/boost/trunk/boost/utility/addressof.hpp
 template <typename T>
 T* addressof(T& v)
