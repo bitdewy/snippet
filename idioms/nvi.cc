@@ -13,14 +13,17 @@
 
 #include <set>
 
-class Set {
+class Set
+{
   std::set<int> s_;
 public:
-  void add(int i) {
+  void add(int i)
+  {
     s_.insert(i);
     add_impl(i); // Note virtual call.
   }
-  void addAll(int* begin, int* end) {
+  void addAll(int* begin, int* end)
+  {
     s_.insert(begin, end);
     addAll_impl(begin, end); // Note virtual call.
   }
@@ -29,13 +32,16 @@ private:
   virtual void addAll_impl(int* begin, int* end) = 0;
 };
 
-class CountingSet : public Set {
+class CountingSet : public Set
+{
 private:
   int count_;
-  virtual void add_impl(int i) {
+  virtual void add_impl(int i)
+  {
     count_++;
   }
-  virtual void addAll_impl(int* begin, int* end) {
+  virtual void addAll_impl(int* begin, int* end)
+  {
     count_ += std::distance(begin, end);
   }
 };

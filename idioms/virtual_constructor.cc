@@ -7,7 +7,7 @@
 class Employee
 {
 public:
-  virtual ~Employee() {}  // Native support for polymorphic destruction
+  virtual ~Employee() { }  // Native support for polymorphic destruction
   virtual Employee* create() const = 0; // Virtual constructor (creation)
   virtual Employee* clone() const = 0;  // Virtual constructor (copying)
 };
@@ -15,7 +15,7 @@ public:
 class Manager : public Employee     // "is-a" relationship
 {
 public:
-  ~Manager() {}                 // Destructor
+  ~Manager() { }                // Destructor
   Manager* create() const       // Virtual constructor (creation)
   {
     return new Manager();       // Default constructor
@@ -29,7 +29,7 @@ public:
 class Programmer : public Employee
 {
 public:
-  ~Programmer() {}
+  ~Programmer() { }
   Programmer* create() const
   {
     return new Programmer();

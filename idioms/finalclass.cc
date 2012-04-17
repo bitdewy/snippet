@@ -5,7 +5,7 @@
 template <typename T>
 class MakeFinal
 {
-  MakeFinal() {}  // private by default.
+  MakeFinal() { }  // private by default.
   friend T;
 };
 

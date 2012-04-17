@@ -2,7 +2,8 @@
 // <Effective C++ (3rd edition)> item 25 & item 31.
 
 // handle.h
-class Handle {
+class Handle
+{
 private:
   struct CheshireCat;            // Not defined here
   CheshireCat* smile;            // Handle
@@ -17,28 +18,33 @@ public:
 
 // handle.cc
 #include "handle.h"
-#include <algorithm> // std::swap
+#include <algorithm>  // std::swap
 
-struct Handle::CheshireCat {
+struct Handle::CheshireCat
+{
   int a;
   int b;
 };
 
 Handle::Handle()
-  : smile(new CheshireCat()) {
-    // do nothing
+  : smile(new CheshireCat())
+{
+  // do nothing
 }
 
 Handle::Handle(const Handle& other)
-  : smile(new CheshireCat(*(other.smile))) {
-    // do nothing
+  : smile(new CheshireCat(*(other.smile)))
+{
+  // do nothing
 }
 
-const Handle& Handle::operator=(Handle other) {
+const Handle& Handle::operator=(Handle other)
+{
   std::swap(this->smile, other.smile);
   return *this;
 }
 
-Handle::~Handle() {
+Handle::~Handle()
+{
   delete smile;
 }
