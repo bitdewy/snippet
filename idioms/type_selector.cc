@@ -1,4 +1,7 @@
-// ...
+// type selection idioms is mentioned in <Morden C++ Design> section 2.6
+// implement in Loki
+// http://loki-lib.svn.sourceforge.net/viewvc/loki-lib/trunk/include/loki/TypeManip.h
+
 template <bool, class L, class R>
 struct IF  // primary template
 {
