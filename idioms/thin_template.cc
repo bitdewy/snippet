@@ -1,3 +1,7 @@
+// Thin template idiom is used to reduce duplicate object code.
+// It's mentioned in <Effective C++ (3rd edition)> item 44.
+// Symbian OS relies on this idiom a lot.
+
 // Not a template
 class VectorBase
 {
