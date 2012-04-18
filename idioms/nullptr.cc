@@ -1,4 +1,6 @@
-//NOTE: In C++0x, the nullptr name itself is a keyword and requires no headers.
+// null pointer idioms resolve confusion in overload resolution problem between
+// pointer type and digital type
+// NOTE: In C++0x, the nullptr name itself is a keyword and requires no headers.
 
 const  // It is a const object
 class nullptr_t
