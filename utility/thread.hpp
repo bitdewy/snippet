@@ -1,6 +1,7 @@
 #ifndef BITDEWY_THREAD_H_
 #define BITDEWY_THREAD_H_
 
+#include <boost/function.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/operators.hpp>
 #include <Windows.h>

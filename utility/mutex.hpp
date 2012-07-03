@@ -7,8 +7,6 @@
 namespace bitdewy
 {
 
-typedef CRITICAL_SECTION mutex_type;
-
 class mutex : boost::noncopyable
 {
 
@@ -19,6 +17,7 @@ public:
   void unlock() { LeaveCriticalSection(&mutex_); }
 
 private:
+  typedef CRITICAL_SECTION mutex_type;
   mutex_type mutex_;
 
 };
