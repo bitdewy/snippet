@@ -14,7 +14,7 @@ class thread : boost::noncopyable,
 {
 
 public:
-  typedef DWORD thread::id;
+  typedef DWORD id;
   typedef boost::function<void ()> thread_func;
   explicit thread(const thread_func& f)
     : hthread_(0), tid_(0), func_(f)
@@ -35,7 +35,7 @@ public:
     WaitForSingleObject(hthread_, INFINITE);
   }
 
-  thread::id tid() const { return tid_; }
+  id tid() const { return tid_; }
 
 private:
   static unsigned long WINAPI start_thread(void* o) {
@@ -44,9 +44,9 @@ private:
     return 0;
   }
   void run() { func_(); }
-  typedef HANDLE thread::handle;
-  thread::handle hthread_;
-  thread::id tid_;
+  typedef HANDLE handle;
+  handle hthread_;
+  id tid_;
   thread_func func_;
 
 };

@@ -20,7 +20,10 @@ public:
     if (unlocked_)
       lock_.lock();
   }
-  void unlock() { lock_.unlock(); }
+  void unlock() { 
+    lock_.unlock();
+    unlocked_ = true;
+  }
 
 private:
   lock_type& lock_;
