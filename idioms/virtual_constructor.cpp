@@ -44,3 +44,4 @@ Employee* duplicate(const Employee& e)
 {
   return e.clone();  // Using virtual constructor idiom
 }
+

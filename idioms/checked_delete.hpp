@@ -6,6 +6,9 @@
 // implement in boost
 // http://svn.boost.org/svn/boost/trunk/boost/checked_delete.hpp
 
+#ifndef BITDEWY_CHECKED_DELETE_H_
+#define BITDEWY_CHECKED_DELETE_H_
+
 template<class T> inline void checked_delete(T* x)
 {
   // intentionally complex - simplification causes regressions
@@ -20,3 +23,6 @@ template<class T> inline void checked_array_delete(T* x)
   (void) sizeof(type_must_be_complete);
   delete[] x;
 }
+
+#endif
+

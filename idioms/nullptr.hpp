@@ -2,6 +2,9 @@
 // pointer type and digital type
 // NOTE: In C++0x, the nullptr name itself is a keyword and requires no headers.
 
+#ifndef BITDEWY_NULLPTR_H_
+#define BITDEWY_NULLPTR_H_
+
 const  // It is a const object
 class nullptr_t
 {
@@ -19,3 +22,6 @@ private:
   void operator&() const;  // Can't take address of nullptr
 
 } null_ptr = {};
+
+#endif
+

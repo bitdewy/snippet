@@ -1,3 +1,6 @@
+#ifndef BITDEWY_ADDRESSOF_H_
+#define BITDEWY_ADDRESSOF_H_
+
 class nonaddressable
 {
 public:
@@ -15,9 +18,13 @@ T* addressof(T& v)
     &const_cast<char&>(reinterpret_cast<const volatile char&>(v)));
 }
 
-int main(void)
-{
-  nonaddressable na;
-  nonaddressable* naptr = addressof(na);
-  return 0;
-}
+#endif
+
+// usage:
+//int main(void)
+//{
+//  nonaddressable na;
+//  nonaddressable* naptr = addressof(na);
+//  return 0;
+//}
+

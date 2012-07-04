@@ -45,3 +45,4 @@ private:
     count_ += std::distance(begin, end);
   }
 };
+

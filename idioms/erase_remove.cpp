@@ -12,3 +12,4 @@ int main()
   v.erase(std::remove(v.begin(), v.end(), 99), v.end());
   return 0;
 }
+

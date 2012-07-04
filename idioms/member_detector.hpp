@@ -1,3 +1,6 @@
+#ifndef BITDEWY_MEMBER_DETECTOR_H_
+#define BITDEWY_MEMBER_DETECTOR_H_
+
 template<typename T>
 class DetectX
 {
@@ -19,3 +22,6 @@ public:
   typedef DetectX type;
   enum { value = sizeof(func<Derived>(0)) == 2 };
 };
+
+#endif
+

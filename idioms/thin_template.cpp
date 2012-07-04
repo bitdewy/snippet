@@ -22,3 +22,4 @@ class Vector<T*> : VectorBase
     return VectorBase::at(index);
   }
 };
+

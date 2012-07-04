@@ -48,3 +48,4 @@ Handle::~Handle()
 {
   delete smile;
 }
+
