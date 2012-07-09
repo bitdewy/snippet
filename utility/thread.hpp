@@ -4,6 +4,7 @@
 #include <boost/function.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/operators.hpp>
+#include <boost/thread/condition.hpp>
 #include <Windows.h>
 
 namespace bitdewy
