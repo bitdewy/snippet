@@ -6,22 +6,22 @@
 namespace bitdewy {
 
 class Any {
-public:
+ public:
   virtual ~Any() {}
 };
 
 template<typename A>
 class CallbackT : public Any
 {
-public:
-    virtual ~CallbackT() {}
-    virtual void exec(A) = 0;
+ public:
+  virtual ~CallbackT() {}
+  virtual void exec(A) = 0;
 };
 
 template<typename T, typename A>
 class Bind : public CallbackT<A>
 {
-public:
+ public:
   typedef void (T::*F)(A);
 
   Bind(T *target, F function)
@@ -35,7 +35,7 @@ public:
       (target_->*function_)(arg);
   }
 
-private:
+ private:
   T *target_;
   F function_;
 };
@@ -43,7 +43,7 @@ private:
 template<typename T, typename C, typename A>
 class BindWithContext : public CallbackT<A>
 {
-public:
+ public:
   typedef void (T::*F)(C, A);
 
   BindWithContext(T *target, F function, C context)
@@ -57,7 +57,7 @@ public:
       (target_->*function_)(context_, arg);
   }
 
-private:
+ private:
   T* target_;
   F function_;
   C context_;
@@ -65,7 +65,7 @@ private:
 
 class Callback
 {
-public:
+ public:
   template<typename T, typename C, typename A>
   Callback(T *target, void (T::*function)(C, A), C context)
     : base_(new BindWithContext<T, C, A>(target, function, context))
@@ -90,11 +90,10 @@ public:
       cbp->exec(arg);
   }
 
-private:
+ private:
   Any* base_;
 };
 
 }  // namespace bitdewy
 
 #endif // BITDEWY_CALLBACK_H_
-
