@@ -48,5 +48,4 @@ auto explode(F&& f, std::tuple<Ts...>&& t)
   
 }  // namespace bitdewy
 
-
 #endif  // BITDEWY_EXPANDER_HPP_
