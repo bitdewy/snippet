@@ -16,7 +16,6 @@ struct fixpoint {
     }
     
     template<typename L> loopfunc_t(const L &l):func(l) {}
-    typedef V Parameter_t;
   
    private:
     std::function<func_t(loopfunc_t)> func;
