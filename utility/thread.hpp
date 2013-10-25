@@ -7,19 +7,16 @@
 #include <boost/thread/condition.hpp>
 #include <Windows.h>
 
-namespace bitdewy
-{
+namespace bitdewy {
 
 class thread : boost::noncopyable,
-               boost::equality_comparable<thread>
-{
-
-public:
+               boost::equality_comparable<thread> {
+ public:
   typedef DWORD id;
   typedef boost::function<void ()> thread_func;
   explicit thread(const thread_func& f)
-    : hthread_(0), tid_(0), func_(f)
-  {}
+    : hthread_(0), tid_(0), func_(f) {}
+
   ~thread() {
     // FIXME: Closing a thread handle does not terminate the associated thread
     // or remove the thread object.
@@ -32,19 +29,22 @@ public:
       //create thread failed
     }
   }
+
   void join() {
     WaitForSingleObject(hthread_, INFINITE);
   }
 
   id tid() const { return tid_; }
 
-private:
+ private:
   static unsigned long WINAPI start_thread(void* o) {
     thread* t = static_cast<thread*>(o);
     t->run();
     return 0;
   }
+
   void run() { func_(); }
+
   typedef HANDLE handle;
   handle hthread_;
   id tid_;
@@ -52,8 +52,7 @@ private:
 
 };
 
-bool operator==(const thread& lhs, const thread& rhs)
-{
+bool operator==(const thread& lhs, const thread& rhs) {
   return lhs.tid() == rhs.tid();
 }
 

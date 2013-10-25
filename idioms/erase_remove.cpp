@@ -3,8 +3,7 @@
 #include <algorithm>
 #include <vector>
 
-int main()
-{
+int main() {
   std::vector<int> v;
   // fill it up somehow
 

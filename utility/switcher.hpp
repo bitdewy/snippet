@@ -2,6 +2,7 @@
 #define BITDEWY_SWITCHER_HPP_
 
 namespace bitdewy {
+  
 template <int index, int count, class dispatcher>
 struct switcher {
   typename dispatcher::result_type

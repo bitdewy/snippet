@@ -9,16 +9,14 @@
 #ifndef BITDEWY_CHECKED_DELETE_H_
 #define BITDEWY_CHECKED_DELETE_H_
 
-template<class T> inline void checked_delete(T* x)
-{
+template<class T> inline void checked_delete(T* x) {
   // intentionally complex - simplification causes regressions
   typedef char type_must_be_complete[sizeof(T)? 1: -1];
   (void) sizeof(type_must_be_complete);
   delete x;
 }
 
-template<class T> inline void checked_array_delete(T* x)
-{
+template<class T> inline void checked_array_delete(T* x) {
   typedef char type_must_be_complete[sizeof(T)? 1: -1];
   (void) sizeof(type_must_be_complete);
   delete[] x;

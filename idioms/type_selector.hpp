@@ -6,14 +6,12 @@
 #define BITDEWY_TYPE_SELECTOR_H_
 
 template <bool, class L, class R>
-struct IF  // primary template
-{
+struct IF { // primary template
   typedef R type;
 };
 
 template <class L, class R>
-struct IF<true, L, R>  // partial specialization
-{
+struct IF<true, L, R> { // partial specialization
   typedef L type;
 };
 

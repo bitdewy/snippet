@@ -3,22 +3,19 @@
 // Symbian OS relies on this idiom a lot.
 
 // Not a template
-class VectorBase
-{
+class VectorBase {
   void insert(void*);
   void* at(int index);
 };
 
 // Thin template
 template <typename T>
-class Vector<T*> : VectorBase
-{
-  inline void insert(T* t)
-  {
+class Vector<T*> : VectorBase {
+  inline void insert(T* t) {
     VectorBase::insert(t);
   }
-  inline T* at(int index)
-  {
+
+  inline T* at(int index) {
     return VectorBase::at(index);
   }
 };

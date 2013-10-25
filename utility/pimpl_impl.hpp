@@ -3,40 +3,30 @@
 
 #include <utility>
 
-namespace bitdewy
-{
+namespace bitdewy {
 
 template <typename T>
-pimpl<T>::pimpl() : m(new T)
-{
-}
+pimpl<T>::pimpl() : m(new T) {}
 
 template <typename T>
 template <typename Arg>
-pimpl<T>::pimpl(Arg&& arg) : m(new T(std::forward<Arg>(arg)))
-{
-}
+pimpl<T>::pimpl(Arg&& arg) : m(new T(std::forward<Arg>(arg))) {}
+
 template <typename T>
 template <typename Arg1, typename Arg2> 
 pimpl<T>::pimpl(Arg1&& arg1, Arg2&& arg2)
-  : m(new T(std::forward<Arg1>(arg1), std::forward<Arg2>(arg2)))
-{
-}
+  : m(new T(std::forward<Arg1>(arg1), std::forward<Arg2>(arg2))) {}
 
 template <typename T>
-pimpl<T>::~pimpl()
-{
-}
+pimpl<T>::~pimpl() {}
 
 template <typename T>
-T* pimpl<T>::operator->()
-{
+T* pimpl<T>::operator->() {
   return m.operator->();
 }
 
 template <typename T>
-T& pimpl<T>::operator*()
-{
+T& pimpl<T>::operator*() {
   return m.operator*();
 }
 

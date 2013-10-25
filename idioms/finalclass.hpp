@@ -6,8 +6,7 @@
 #define BItDEWY_FINALCLASS_H_
 
 template <typename T>
-class MakeFinal
-{
+class MakeFinal {
   MakeFinal() { }  // private by default.
   friend T;
 };

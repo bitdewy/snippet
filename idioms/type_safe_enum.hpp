@@ -3,12 +3,11 @@
 #define BITDEWY_TYPE_SAFE_ENUM_H_
 
 template<typename def, typename inner = typename def::type>
-class safe_enum : public def
-{
+class safe_enum : public def {
   typedef typename def::type type;
   inner val;
 
-public:
+ public:
   safe_enum(type v) : val(v) {}
 
   bool operator == (const safe_enum& s) const { return this->val == s.val; }

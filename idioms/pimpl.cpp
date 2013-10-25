@@ -2,13 +2,12 @@
 // <Effective C++ (3rd edition)> item 25 & item 31.
 
 // handle.h
-class Handle
-{
-private:
+class Handle {
+ private:
   struct CheshireCat;            // Not defined here
   CheshireCat* smile;            // Handle
 
-public:
+ public:
   Handle();                      // Constructor
   Handle(const Handle&);         // Copy constructor
   const Handle& operator=(Handle);     // Copy assignment operator
@@ -20,32 +19,27 @@ public:
 #include "handle.h"
 #include <algorithm>  // std::swap
 
-struct Handle::CheshireCat
-{
+struct Handle::CheshireCat {
   int a;
   int b;
 };
 
 Handle::Handle()
-  : smile(new CheshireCat())
-{
+  : smile(new CheshireCat()) {
   // do nothing
 }
 
 Handle::Handle(const Handle& other)
-  : smile(new CheshireCat(*(other.smile)))
-{
+  : smile(new CheshireCat(*(other.smile))) {
   // do nothing
 }
 
-const Handle& Handle::operator=(Handle other)
-{
+const Handle& Handle::operator=(Handle other) {
   std::swap(this->smile, other.smile);
   return *this;
 }
 
-Handle::~Handle()
-{
+Handle::~Handle() {
   delete smile;
 }
 

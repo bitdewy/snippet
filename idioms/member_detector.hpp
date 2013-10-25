@@ -2,8 +2,7 @@
 #define BITDEWY_MEMBER_DETECTOR_H_
 
 template<typename T>
-class DetectX
-{
+class DetectX {
   struct Fallback { int X; };  // add member name "X"
   struct Derived : T, Fallback { };
 
@@ -18,7 +17,7 @@ class DetectX
   template<typename U>
   static ArrayOfTwo& func(...);
 
-public:
+ public:
   typedef DetectX type;
   enum { value = sizeof(func<Derived>(0)) == 2 };
 };

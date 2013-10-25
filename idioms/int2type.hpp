@@ -3,8 +3,7 @@
 #define BITDEWY_INT2TYPE_H_
 
 template <int I>
-struct Int2Type
-{
+struct Int2Type {
   enum { value = I };
 };
 
