@@ -6,6 +6,8 @@ namespace bitdewy {
 
 template <typename T, typename Traits>
 class unique_handle {
+  struct bool_struct { int member; };
+  using bool_type = int bool_struct::*;
 public:
   explicit unique_handle(T value = Traits::invalid())
     : value_(value) {}
@@ -29,16 +31,14 @@ public:
     value_ = Traits::invalid();
     return value;
   }
+  operator bool_type() {
+    return Traits::invalid() != value_ ? &bool_struct::member : nullptr;
+  }
 private:
   unique_handle(const unique_handle&);
   unique_handle& operator=(const unique_handle&);
   bool operator==(const unique_handle&);
   bool operator!=(const unique_handle&);
-  struct bool_struct { int member; };
-  using bool_type = int bool_struct::*;
-  operator bool_type() {
-    return Traits::invalid() != value_ ? &bool_struct::member : nullptr;
-  }
   void close() {
     if (*this) {
       Traits::close(value_);
