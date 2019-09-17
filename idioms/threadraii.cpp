@@ -2,7 +2,7 @@
 
 class ThreadRAII {
 public:
-  typedef void (std::thread::*RAIIAction)();  // dtor action
+  using RAIIAction = void (std::thread::*)();  // dtor action
   ThreadRAII(std::thread&& thread, RAIIAction a)
     : t(std::move(thread)), action(a) {}
 
